@@ -1,6 +1,6 @@
 FROM ghcr.io/linuxserver/webtop:ubuntu-xfce
 
-ARG SPOTIFLAC_VERSION=v7.0.6
+ARG SPOTIFLAC_VERSION=v7.1.6
 
 LABEL org.opencontainers.image.source="https://github.com/iassis/SpotiFLAC-Docker"
 
@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Use the dynamic variable in the download URL
-RUN wget -O SpotiFLAC.AppImage "https://github.com/afkarxyz/SpotiFLAC/releases/download/${SPOTIFLAC_VERSION}/SpotiFLAC.AppImage" && \
+RUN wget -O SpotiFLAC.AppImage "https://github.com/spotbye/SpotiFLAC/releases/download/${SPOTIFLAC_VERSION}/SpotiFLAC.AppImage" && \
     chmod +x SpotiFLAC.AppImage && \
     ./SpotiFLAC.AppImage --appimage-extract && \
     rm SpotiFLAC.AppImage && \
